@@ -1,0 +1,153 @@
+@import url(fonts.css);
+@import url(reset.css);
+@mixin mobile {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin web {
+    @media (max-width: 1920px) {
+        @content;
+    }
+}
+
+
+$spacing : 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50;
+
+@for $i from 0 through 10 {
+    &.mt#{$i} {
+        margin-top: #{$i}px !important;
+    }
+    &.mb#{$i} {
+        margin-top: #{$i}px !important;
+    }
+    &.ml#{$i} {
+        margin-top: #{$i}px !important;
+    }
+    &.mr#{$i} {
+        margin-top: #{$i}px !important;
+    }
+    &.pt#{$i} {
+        margin-top: #{$i}px !important;
+    }
+    &.pb#{$i} {
+        margin-top: #{$i}px !important;
+    }
+    &.pl#{$i} {
+        margin-top: #{$i}px !important;
+    }
+    &.pr#{$i} {
+        margin-top: #{$i}px !important;
+    }
+}
+
+
+.m_only {
+    display: none;
+}
+
+.ta {
+    &C {
+        text-align: center;
+    }
+    &L {
+        text-align: left;
+    }
+    &R {
+        text-align: right;
+    }
+}
+img {
+    max-width: 100%;
+}
+
+.inner {
+    width: 1440px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 50px;
+    &2 {
+        width: 1296px;
+        max-width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+}
+
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 150px;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    background-color: #fff;
+    .inner {
+        height: 100%;
+        position: static;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+
+    }
+    .btn_nav {
+        width: 54px;
+        height: 54px;
+        position: absolute;
+        z-index: 99;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 48px;
+        &_bar {
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            background-color: #000;
+            left: 50%;
+            margin-left: -15px;
+            &.top {
+                top: 13px;
+            }
+            &.mid {
+                top: 26px;
+            }
+            &.bot {
+                top: 39px;
+            }
+
+        }
+    }
+    .nav {
+        position: fixed;
+        height: 100%;
+        right: 0;
+        top: 0;
+        width: 624px;
+        background-color: #fff;
+        border-left: 1px solid #000;
+    }
+}
+
+
+
+@include tablet {
+
+}
+
+
+@include mobile {
+
+
+
+}
