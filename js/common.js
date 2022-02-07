@@ -7,15 +7,15 @@ $(function(){
         }
     });
 
-    $('.nav_btn').on('click',function(){
+    $('.btn_nav').on('click',function(){
         if($(this).hasClass('on')){
             $(this).removeClass('on');
-            $('.gnb').removeClass('on');
+            $('.nav').removeClass('on');
         }else{
             $(this).addClass('on');
-            $('.gnb').addClass('on');
+            $('.nav').addClass('on');
         }
-        
+
     });
 
 
@@ -25,7 +25,7 @@ $(function(){
         setWinH();
     });
 
-    
+
 });
 
 function setWinH(){
