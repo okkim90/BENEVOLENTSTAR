@@ -45,10 +45,32 @@
         </header>
         <div id="container" class="sub">
             <div class="inner ty_prod_view">
-                <div class="img_box">
-                    <img src="../images/pic1.jpg" alt="">
+                <div class="prod_view">
+                    <div class="img_box">
+                        <img src="../images/pic1.jpg" alt="">
+                        <strong class="tit_box">가을 어느날</strong>
+                    </div>
+                    <div class="prod_info">
+                        <strong class="tprod_info_tit">작품 정보 창</strong>
+                        <div class="prod_info_sec sec_tit">
+                            <h2 class="prod_name">가을 어느 날</h2>
+                            <ul class="prod_info_list">
+                                <li><strong>연도</strong> 1934</li>
+                                <li><strong>규격</strong> 96x162cm</li>
+                            </ul>
+                        </div>
+                        <div class="prod_info_sec sec_desc">
+                            <strong class="tit">작품 설명</strong>
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        </div>
+                        <div class="prod_info_sec sec_detail img_box">
+                            <img src="../images/pic1.jpg" alt="">
+                        </div>
+                        <button>구매하기</button>
+                    </div>
+
                 </div>
-                <strong class="tit_box">가을 어느날</strong>
+
             </div>
         </div>
         <footer id="footer" class="footer">
@@ -98,46 +120,17 @@
     <script src="../js/swiper.min.js"></script> <!-- swiper css -->
     <script src="../js/common.js"></script>
     <script>
-        var art_list = new Swiper('.art_list',{
-            speed: 600,
+        $(function(){
+            $(window).on('load resize',function(){
+                let win_w = $(this).outerWidth();
+                let menu_w = $('.nav').outerWidth();
+                let inner_w = $('.prod_view').outerWidth();
 
-            slidesPerView: "auto",
-            visibilityFullFit: true,
-            mousewheel: {
-                enabled: true,
-                sensitivity: 4,
-            },
-            freeMode: true,
+                //console.log(menu_w - (win_w - inner_w)/2);
+                $('.prod_view').css({'padding-right': menu_w - (win_w - inner_w)/2})
+            });
 
-            //centeredSlides: true,
-            // autoplay: {
-            //     delay: 4500,
-            //     disableOnInteraction: false,
-            // },
-            // pagination: {
-            //     clickable: true,
-            //     el: '.mv-pagination',
-            // },
-            // navigation: {
-            //     nextEl: ".mv-next",
-            //     prevEl: ".mv-prev",
-            // }
         });
-
-
-        function onMouseWheel(e) {
-            console.log(e);
-            clearTimeout($.data(this, 'timer'));
-
-            $(".art_list .swiper-wrapper").addClass('mousewheel');
-
-            $.data(this, 'timer', setTimeout( function () {
-            $(".art_list .swiper-wrapper").removeClass('mousewheel')
-
-            }, 250));
-        };
-        window.addEventListener( 'mousewheel', onMouseWheel, false )
-        window.addEventListener( 'DOMMouseScroll', onMouseWheel, false )
     </script>
 </body>
 </html>
