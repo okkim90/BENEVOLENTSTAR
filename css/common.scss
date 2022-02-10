@@ -637,6 +637,11 @@ img {
     &_link {
         display: flex;
         padding: 16px 0;
+        &:hover {
+            .tit {
+                text-decoration: underline;
+            }
+        }
     }
     .img_area {
         width: 240px;
@@ -707,29 +712,405 @@ img {
 
 .notice_view {
     &_top {
-        padding: 39px 0 55px;
+        padding: 39px 0 50px;
         background: url(../images/sub/box.jpg) no-repeat center center;
         background-size: cover;
+        .date {
+            display: block;
+            font-size: 18px;
+            line-height: 1.44;
+            margin-bottom: 16px;
+        }
+        .tit {
+            font-size: 32px;
+            line-height: 1.41;
+            font-weight: 500;
+        }
+        .bottom_cont {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 43px;
+            .view {
+                font-size: 18px;
+                line-height: 36px;
+                em {
+                    margin-left: 10px;
+                }
+
+            }
+            .btn_sns {
+                font-size: 18px;
+                line-height: 36px;
+                padding-left: 44px;
+                position: relative;
+                &::before {
+                    content:'';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 36px;
+                    height: 36px;
+                    background-image: url(../images/icon/share.svg);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+            }
+        }
     }
+
+    &_cont {
+        margin-top: 60px;
+        font-size: 22px;
+        line-height: 1.41;
+        font-weight: 300;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+
+
+.btn {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    &.ty1 {
+        width: 134px;
+        height: 56px;
+        line-height: 56px;
+        font-size: 18px;
+        flex-shrink: 0;
+        margin-left: 8px;
+    }
+    &.ty2 {
+        display: block;
+        margin-top: 16px;
+        width: 100%;
+        height: 64px;
+        line-height: 64px;
+        font-size: 20px;
+    }
+}
+.input {
+    border: 1px solid #000;
+    height: 56px;
+    line-height: 54px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 16px;
+}
+.ta_common {
+    width: 100%;
+    height: 320px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    font-size: 16px;
+    line-height: 1.44;
+}
+
+.form_box {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    padding: 40px 24px 24px;
+    box-sizing: border-box;
+    &_tit {
+        text-align: center;
+        font-size: 26px;
+        line-height: 1.42;
+        font-weight: bold;
+        margin-bottom: 24px;
+    }
+    .form_sec {
+        & + .form_sec {
+            margin-top: 8px;
+        }
+        &_tit {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.44;
+        }
+        &_cont {
+            display: flex;
+            flex-wrap: wrap;
+            & > * {
+                min-width: 0;
+            }
+        }
+        .error_msg {
+            display: block;
+        }
+        .input {
+            flex: 1;
+        }
+        .error_msg {
+            display: block;
+            margin-top: 4px;
+            font-size: 16px;
+            line-height: 1.44;
+            color: #00f;
+            &.false {
+                color: #f00;
+            }
+        }
+    }
+
+    .login_msg {
+        margin-top: 16px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.44;
+        font-weight: 300;
+        color: #7d7d7d;
+        .btn_login {
+            display: inline-block;
+            color: #7d7d7d;
+            font-weight: 500;
+            margin-left: 5px;
+        }
+    }
+}
+
+
+.tbl {
+    width: 100%;
+    text-align: center;
+    thead th {
+        background-color: #f7f7f7;
+        border: 1px solid #000;
+        border-left: none;
+        border-right: none;
+        font-size: 20px;
+        line-height: 1.4;
+        padding: 16px 6px;
+    }
+    tbody td {
+        height: 200px;
+        padding: 20px 6px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #000;
+        font-size: 20px;
+        line-height: 1.4;
+    }
+}
+
+.mp_wrap {
+    display: flex;
+    margin-top: 69px;
+    .mp_info {
+        width: 28.65%;
+        &_list {
+            font-size: 26px;
+            line-height: 1.42;
+            padding-left: 16px;
+            dt {
+                font-weight: 300;
+            }
+            dd + dt {
+                margin-top: 40px;
+            }
+        }
+        &_btns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 194px;
+            .btn {
+                width: calc(50% - 8px);
+                margin-top: 0;
+            }
+        }
+    }
+    .mp_order {
+        width: 71.35%;
+        box-sizing: border-box;
+        padding-left: 36px;
+        .col_img {
+            width: 192px;
+        }
+    }
+    .mp_tit {
+        h2 {
+            font-size: 26px;
+            line-height: 1.42;
+        }
+        padding: 0 16px 20px;
+        border-bottom: 2px solid #000;
+        margin-bottom: 30px;
+    }
+
+}
+
+.paging {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 0;
+    &_item {
+        display: inline-block;
+        vertical-align: top;
+    }
+    &_btn {
+        display: block;
+        font-size: 18px;
+        line-height: 36px;
+        height: 36px;
+        min-width: 36px;
+        padding: 0 4px;
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        background-position: center center;
+        color: #aaa;
+        &:hover {
+            color: #000;
+        }
+        @at-root .paging_item.on & {
+            font-weight: bold;
+            color: #000;
+            cursor: default;
+            pointer-events: none;
+        }
+        &.prev {
+            background-image: url(../images/icon/paging_prev.svg);
+            margin-right: 24px;
+        }
+        &.next {
+            background-image: url(../images/icon/paging_next.svg);
+            margin-left: 24px;
+        }
+    }
+}
+
+
+@media (max-width: 1320px) {
+    .mp_wrap {
+        display: block;
+        .mp_info {
+            width: 100%;
+            &_btns {
+                margin-top: 40px;
+            }
+        }
+        .mp_order {
+            padding-left: 0;
+            margin-top: 80px;
+            width: 100%;
+            .col_img {
+                width: 160px;
+            }
+        }
+    }
+
+    .prod_view {
+        padding-right: 0 !important;
+        .img_box {
+            padding-right: 0;
+        }
+        .prod_info {
+            width: 100%;
+            position: relative;
+            padding: 0;
+            border-left: none;
+        }
+    }
+
 }
 
 
 
 
 @include tablet {
+    .inner {
+        padding: 0 30px;
+        &2 {
+            padding: 0 30px;
+        }
+        &3 {
+            padding: 0 30px;
+        }
+    }
+    #footer {
+        .inner {
+            display: block;
+        }
+        .footer_sec {
+            &.right {
+                margin-top: 40px;
+                padding-left: 0;
+            }
+        }
+    }
+
     .art_list {
 
         &_item {
             width: 100%;
             box-sizing: border-box;
-
         }
     }
+
+
 }
 
 
 @include mobile {
+    .inner {
+        padding: 0 20px;
+        &2 {
+            padding: 0 20px;
+        }
+        &3 {
+            padding: 0 20px;
+        }
+    }
+    .header {
+        height: 60px;
+        .logo {
+            img {
+                width: auto;
+                height: 30px;
+            }
+        }
+    }
+    .btn_nav {
+        right: 12px;
+        $this : #{&};
+        width: 40px;
+        height: 40px;
+        &_bar {
+            width: 24px;
+            height: 3px;
+            margin-right: -12px;
+            &.top {
+                top: 9px;
+            }
+            &.mid {
+                top: 19px;
+            }
+            &.bot {
+                top: 29px;
+            }
+        }
 
+        &.on {
+            #{$this}_bar {
+                &.top {
+                    top: 19px;
 
+                }
+                &.bot {
+                    top: 19px;
+
+                }
+            }
+        }
+    }
+    .nav {
+        right: -100%;
+        width: 100%;
+    }
 
 }

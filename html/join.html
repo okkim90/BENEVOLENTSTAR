@@ -43,39 +43,50 @@
                 <a href="" class="btn_site_info" >홈페이지 정보</a>
             </nav>
         </header>
-        <div id="container" class="main">
-            <div class="main_cont">
-                <div class="inner">
-                    <div class="art_list ">
-                        <ul class="swiper-wrapper art_list_inner">
-                            <li class="swiper-slide art_list_item" >
-                                <a href="prod_view.html">
-                                    <div class="img_box">
-                                        <img src="../images/pic1.jpg" alt="">
-                                    </div>
-                                    <strong class="tit_box">가을 어느날</strong>
-                                </a>
-                            </li>
-                            <li class="swiper-slide art_list_item" >
-                                <a href="prod_view.html">
-                                    <div class="img_box">
-                                        <img src="../images/pic2.jpg" alt="">
-                                    </div>
-                                    <strong class="tit_box">계산성당</strong>
-                                </a>
-                            </li>
-                            <li class="swiper-slide art_list_item" >
-                                <a href="prod_view.html">
-                                    <div class="img_box">
-                                        <img src="../images/pic1.jpg" alt="">
-                                    </div>
-                                    <strong class="tit_box">가을 어느날</strong>
-                                </a>
-                            </li>
-                        </ul>
+        <div id="container" class="sub">
+            <div class="inner">
+                <div class="form_box">
+                    <h2 class="form_box_tit">회원가입</h2>
+                    <div class="form_sec">
+                        <label for="email" class="form_sec_tit">이메일</label>
+                        <div class="form_sec_cont">
+                            <input type="text" id="email" class="input ty1"> <button type="button" class="btn ty1">중복확인</button>
+                        </div>
+                        <span class="error_msg">사용가능한 이메일입니다.</span>
+                        <span class="error_msg false">이미 사용중인 이메일 입니다.</span>
+                    </div>
+                    <div class="form_sec">
+                        <label for="pw" class="form_sec_tit">비밀번호</label>
+                        <div class="form_sec_cont">
+                            <input type="password" id="pw" class="input ty1">
+                        </div>
+                    </div>
+                    <div class="form_sec">
+                        <label for="pw_confirm" class="form_sec_tit">비밀번호 확인</label>
+                        <div class="form_sec_cont">
+                            <input type="password" id="pw_confirm" class="input ty1">
+                        </div>
+                        <span class="error_msg">비밀번호가 일치합니다.</span>
+                        <span class="error_msg false">비밀번호가 일치하지 않습니다.</span>
+                    </div>
+                    <div class="form_sec">
+                        <label for="mobile" class="form_sec_tit">핸드폰 번호</label>
+                        <div class="form_sec_cont">
+                            <input type="tel" id="mobile" class="input ty1"> <button type="button" class="btn ty1">인증하기</button>
+                        </div>
+                        <span class="error_msg">인증 완료되었습니다.</span>
+                    </div>
+                    <div class="form_sec">
+                        <label for="etc" class="form_sec_tit">비고</label>
+                        <div class="form_sec_cont">
+                            <textarea name="" id="etc" class="ta_common"></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn ty2">가입하기</button>
+                    <div class="login_msg">
+                        이미 아이디가 있으신가요? <a href="" class="btn_login">로그인</a>
                     </div>
                 </div>
-
             </div>
         </div>
         <footer id="footer" class="footer">
@@ -125,46 +136,19 @@
     <script src="../js/swiper.min.js"></script> <!-- swiper css -->
     <script src="../js/common.js"></script>
     <script>
-        var art_list = new Swiper('.art_list',{
-            speed: 600,
+        $(function(){
+            $(window).on('load resize',function(){
+                let win_w = $(this).outerWidth();
+                let menu_w = $('.nav').outerWidth();
+                let inner_w = $('.prod_view').outerWidth();
 
-            slidesPerView: "auto",
-            visibilityFullFit: true,
-            mousewheel: {
-                enabled: true,
-                sensitivity: 4,
-            },
-            freeMode: true,
+                //console.log(menu_w - (win_w - inner_w)/2);
+                $('.prod_view').css({'padding-right': menu_w - (win_w - inner_w)/2})
+            });
 
-            //centeredSlides: true,
-            // autoplay: {
-            //     delay: 4500,
-            //     disableOnInteraction: false,
-            // },
-            // pagination: {
-            //     clickable: true,
-            //     el: '.mv-pagination',
-            // },
-            // navigation: {
-            //     nextEl: ".mv-next",
-            //     prevEl: ".mv-prev",
-            // }
         });
-
-
-        function onMouseWheel(e) {
-            console.log(e);
-            clearTimeout($.data(this, 'timer'));
-
-            $(".art_list .swiper-wrapper").addClass('mousewheel');
-
-            $.data(this, 'timer', setTimeout( function () {
-            $(".art_list .swiper-wrapper").removeClass('mousewheel')
-
-            }, 250));
-        };
-        window.addEventListener( 'mousewheel', onMouseWheel, false )
-        window.addEventListener( 'DOMMouseScroll', onMouseWheel, false )
     </script>
 </body>
 </html>
+
+

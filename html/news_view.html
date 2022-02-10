@@ -43,40 +43,23 @@
                 <a href="" class="btn_site_info" >홈페이지 정보</a>
             </nav>
         </header>
-        <div id="container" class="main">
-            <div class="main_cont">
-                <div class="inner">
-                    <div class="art_list ">
-                        <ul class="swiper-wrapper art_list_inner">
-                            <li class="swiper-slide art_list_item" >
-                                <a href="prod_view.html">
-                                    <div class="img_box">
-                                        <img src="../images/pic1.jpg" alt="">
-                                    </div>
-                                    <strong class="tit_box">가을 어느날</strong>
-                                </a>
-                            </li>
-                            <li class="swiper-slide art_list_item" >
-                                <a href="prod_view.html">
-                                    <div class="img_box">
-                                        <img src="../images/pic2.jpg" alt="">
-                                    </div>
-                                    <strong class="tit_box">계산성당</strong>
-                                </a>
-                            </li>
-                            <li class="swiper-slide art_list_item" >
-                                <a href="prod_view.html">
-                                    <div class="img_box">
-                                        <img src="../images/pic1.jpg" alt="">
-                                    </div>
-                                    <strong class="tit_box">가을 어느날</strong>
-                                </a>
-                            </li>
-                        </ul>
+        <div id="container" class="sub2">
+            <div class="notice_view_top">
+                <div class="inner3">
+                    <span class="date">2022.01.13</span>
+                    <h2 class="tit">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</h2>
+                    <div class="bottom_cont">
+                        <span class="view">조회수 <em>40</em></span>
+                        <button type="button" class="btn_sns">공유</button>
                     </div>
                 </div>
-
             </div>
+            <div class="notice_view_cont inner3">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br><br>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br><br>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+            </div>
+
         </div>
         <footer id="footer" class="footer">
             <div class="inner">
@@ -125,46 +108,19 @@
     <script src="../js/swiper.min.js"></script> <!-- swiper css -->
     <script src="../js/common.js"></script>
     <script>
-        var art_list = new Swiper('.art_list',{
-            speed: 600,
+        $(function(){
+            $(window).on('load resize',function(){
+                let win_w = $(this).outerWidth();
+                let menu_w = $('.nav').outerWidth();
+                let inner_w = $('.prod_view').outerWidth();
 
-            slidesPerView: "auto",
-            visibilityFullFit: true,
-            mousewheel: {
-                enabled: true,
-                sensitivity: 4,
-            },
-            freeMode: true,
+                //console.log(menu_w - (win_w - inner_w)/2);
+                $('.prod_view').css({'padding-right': menu_w - (win_w - inner_w)/2})
+            });
 
-            //centeredSlides: true,
-            // autoplay: {
-            //     delay: 4500,
-            //     disableOnInteraction: false,
-            // },
-            // pagination: {
-            //     clickable: true,
-            //     el: '.mv-pagination',
-            // },
-            // navigation: {
-            //     nextEl: ".mv-next",
-            //     prevEl: ".mv-prev",
-            // }
         });
-
-
-        function onMouseWheel(e) {
-            console.log(e);
-            clearTimeout($.data(this, 'timer'));
-
-            $(".art_list .swiper-wrapper").addClass('mousewheel');
-
-            $.data(this, 'timer', setTimeout( function () {
-            $(".art_list .swiper-wrapper").removeClass('mousewheel')
-
-            }, 250));
-        };
-        window.addEventListener( 'mousewheel', onMouseWheel, false )
-        window.addEventListener( 'DOMMouseScroll', onMouseWheel, false )
     </script>
 </body>
 </html>
+
+

@@ -20,6 +20,7 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 html {height: 100%; overflow-y: auto;}
 body { overflow: hidden; margin-top: 0 !important; min-width: 320px; color: #222; line-height: 1; font-size: 16px; font-family:'Spoqa Han Sans Neo', sans-serif; word-break: keep-all; word-wrap: break-word; font-weight: normal; min-height: 100%;}
 ol, ul {
@@ -37,9 +38,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+caption {
+	border: 0; clip: rect(0 0 0 0); clip-path: inset(50%); width: 1px; height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap;
+}
 
 a { color: #333; text-decoration: none; cursor: pointer;}
-button {border: 0 none; background: none;}
+button {border: 0 none; background: none;padding: 0;}
 button::-moz-focus-inner,input::-moz-focus-inner {border: 0; padding: 0;}
 button, input, select, textarea { color: #555; line-height: 19px; font-size: 13px; font-family:'Spoqa Han Sans Neo', sans-serif; vertical-align: middle;}
 select { -webkit-border-radius: 0;}
