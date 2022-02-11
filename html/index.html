@@ -125,30 +125,48 @@
     <script src="../js/swiper.min.js"></script> <!-- swiper css -->
     <script src="../js/common.js"></script>
     <script>
-        var art_list = new Swiper('.art_list',{
-            speed: 600,
 
-            slidesPerView: "auto",
-            visibilityFullFit: true,
-            mousewheel: {
-                enabled: true,
-                sensitivity: 4,
-            },
-            freeMode: true,
 
-            //centeredSlides: true,
-            // autoplay: {
-            //     delay: 4500,
-            //     disableOnInteraction: false,
-            // },
-            // pagination: {
-            //     clickable: true,
-            //     el: '.mv-pagination',
-            // },
-            // navigation: {
-            //     nextEl: ".mv-next",
-            //     prevEl: ".mv-prev",
-            // }
+        var mySwiper1 = undefined;
+        function initSwiper1(target) {
+            let $this = $(target);
+            let screenWidth = window.innerWidth;
+            if(screenWidth > 1024 && mySwiper1 == undefined) {
+                mySwiper1 = new Swiper(target, {
+                    speed: 600,
+                    slidesPerView: "auto",
+                    visibilityFullFit: true,
+                    mousewheel: {
+                        enabled: true,
+                        sensitivity: 4,
+                    },
+                    freeMode: true,
+
+                    //centeredSlides: true,
+                    // autoplay: {
+                    //     delay: 4500,
+                    //     disableOnInteraction: false,
+                    // },
+                    // pagination: {
+                    //     clickable: true,
+                    //     el: '.mv-pagination',
+                    // },
+                    // navigation: {
+                    //     nextEl: ".mv-next",
+                    //     prevEl: ".mv-prev",
+                    // }
+                });
+            } else if (screenWidth < 1025 && mySwiper1 != undefined) {
+                mySwiper1.destroy();
+                mySwiper1 = undefined;
+                $this.find('.swiper-wrapper').removeAttr('style');
+                $this.find('.swiper-slide').removeAttr('style');
+
+            }
+        }
+        initSwiper1('.art_list');
+        $(window).on('resize', function(){
+            initSwiper1('.art_list');
         });
 
 
@@ -163,8 +181,12 @@
 
             }, 250));
         };
+
+
         window.addEventListener( 'mousewheel', onMouseWheel, false )
         window.addEventListener( 'DOMMouseScroll', onMouseWheel, false )
+
+
     </script>
 </body>
 </html>
