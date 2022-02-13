@@ -636,7 +636,7 @@ img { max-width: 100%; }
   .form_box .login_msg { font-size: 12px; }
   .form_box .btn.ty1 { min-width: auto; width: 84px; margin-left: 4px; }
   .form_box .btn.ty2 { margin-top: 8px; }
-  .input { height: 36px; font-size: 12px; padding: 0 16px; }
+  .input { height: 36px; line-height: 34px; font-size: 12px; padding: 0 16px; }
   .btn_area.ty_view { margin-top: 24px; }
   .btn.ty1 { width: auto; min-width: 84px; height: 36px; line-height: 36px; font-size: 12px; }
   .btn.ty2 { height: 40px; font-size: 13px; line-height: 40px; }
