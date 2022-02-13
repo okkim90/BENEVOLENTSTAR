@@ -52,6 +52,7 @@ select
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
+  background-color: #fff;
 
 }
 select::-ms-expand {
@@ -60,6 +61,7 @@ select::-ms-expand {
 
 input[type="text"],input[type="password"],input[type="number"],input[type="tel"],input[type="email"],input[type="button"],input[type="submit"],textarea {
     -webkit-appearance: none;-moz-appearance: none; color: #777777;
+	border-radius: 0 !important;
 }
 
 a[href^="tel"] {
