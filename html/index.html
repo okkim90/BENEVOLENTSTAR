@@ -173,7 +173,7 @@
 
 
         function onMouseWheel(e) {
-            console.log(e);
+            //console.log(e);
             clearTimeout($.data(this, 'timer'));
 
             $(".art_list .swiper-wrapper").addClass('mousewheel');
@@ -185,8 +185,8 @@
         };
 
 
-        window.addEventListener( 'mousewheel', onMouseWheel, false )
-        window.addEventListener( 'DOMMouseScroll', onMouseWheel, false )
+        window.addEventListener( 'mousewheel', onMouseWheel, false );
+        window.addEventListener( 'DOMMouseScroll', onMouseWheel, false );
 
 
     </script>
